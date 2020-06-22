@@ -123,7 +123,7 @@ if (isset($_COOKIE['id'])) {
       <div class="container">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h2 class="text-center"> Input Product's Detail Information</h2>
+            <h2 class="text-center"> My Cart</h2>
           </div>
           <div class="panel-body">
 

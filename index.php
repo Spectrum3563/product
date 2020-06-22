@@ -73,7 +73,7 @@ require_once ('getProduct.php');
 									</div>
 									<div class="info-cart">
 										<p>Giỏ hàng</p>
-										<span>2.500.000đ</span>
+										<span></span>
 									</div>
 									<span class="clear"></span>
 								</a>
@@ -96,7 +96,7 @@ require_once ('getProduct.php');
 										<li><a href="#">Sản phẩm khác</a></li>
 									</ul>
 								</li>
-								<li ><a href="inputproduct.html">Thêm sản phẩm</a></li>
+								<li ><a href="inputProduct.html">Thêm sản phẩm</a></li>
 
 								<li><a href="#">Tin tức</a></li>
 								<li><a href="#">Tuyển dụng</a></li>
