@@ -3,8 +3,9 @@ if (isset($_POST['id'])) {
 	$id = $_POST['id'];
 
 	require_once ('dbhelper.php');
-	$sql = 'delete from book where id = '.$id;
+	$sql = 'delete from product where id = '.$id;
 	execute($sql);
 
 	echo 'Xoá thành công';
 }
+?>

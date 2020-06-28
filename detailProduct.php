@@ -1,16 +1,30 @@
 <?php
-$id =[];
-if (!empty($_POST)) {
+$id =$name=$url = $price =$inst ='';
+if (!empty($_GET)) {
   // code...
-  if (isset($_POST['id'])) {
+  if (isset($_GET['id'])) {
     // code...
-    setcookie('id',$_POST['id'],time()+60*60,'/');
+   $id=$_GET['id'];
   }
 }
-if (isset($_COOKIE['id'])) {
-  // code...
-  $id[] = $_COOKIE['id'];
-}
+
+require_once ('getProduct.php');
+        
+                  // code...
+                  foreach ($proList as  $product) {
+                    // code...
+                    if ($id == $product['id']) {
+                      // code...
+                      
+                      $name=$product['name'];
+                      $url = $product['linkImg'];    
+                      $price = $product['price'];
+                      $inst =  $product['installment'];
+                        
+                      
+                    }
+                  
+                }
  ?>
  <!DOCTYPE html>
  <html lang="vi">
@@ -122,64 +136,18 @@ if (isset($_COOKIE['id'])) {
       <div class="container">
         <div class="panel panel-primary">
           <div class="panel-heading">
-			  <br>
-			  <br>
-			  <br>
-            <h2 class="text-center"> {{  My Cart  }}</h2>
+            <h2 class="text-center"> <?=$id?> :  <?=$name?></h2>
           </div>
           <div class="panel-body">
-
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-
-                  <th>Tên sản phảm</th>
-                  <th style="width:auto;height:auto">Hình ảnh</th>
-                  <th>Giá 1 sản phẩm</th>
-                  <th>Số lượng</th>
-
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                require_once ('getProduct.php');
-                foreach ($id as  $value) {
-                  // code...
-                  foreach ($proList as  $product) {
-                    // code...
-                    if ($value == $product['id']) {
-                      // code...
-                      echo '<tr>
-                        <td>'.$product['name'].'</td>
-                        <td> <img src="'.$product['linkImg'].'" alt="'.$product['name'].'"> </td>
-                        <td>'.$product['price'].'</td>
-                        <td><input type="number" name="" value="1"></td>
-                      </tr>';
-                    }
-                  }
-                }
-                echo "</br>";
-                echo "</br>";
-                echo "</br>";
-                echo "</br>";
-
-                 ?>
-                 <script type="text/javascript">
-                 function clear(){
-                    $.post('#', {
-                     'id': a
-                   }, function(data) {
-                     alert(data)
-                     location.reload()
-                   })
-                 }
-                 </script>
-
-              </tbody>
-            </table>
-            <button style="font-size:24px" >CLEAR<i class="fa fa-close" onclick="clear()"></i></button>
-            <button style="font-size:24px" style="margin-top:40px;margin-bottom: 400px;">PAYMENT <i class="fa fa-cc-amex" ></i></button>
-
+            <img src="<?=$url?>" alt="">
+            <h4 class="border border-right-0">Màu Sắc : abcxyz</h4>
+            <br>
+            <h4 class="border border-right-0">Kiểu dáng : xyz abc </h4>
+            <br><h3 class="border border-right-0"> năm xuất sưởng : 2020 </h3>
+           <br>
+           <h3 class="border border-danger"> Price : <?=$price?></h3>
+           <h3 class="border border-danger"> installment : <?=$inst?>%</h3>
+           <h4 > Descreption : </h3><h5>asjdhasiudhausihdasuidhsauidbr <br> asdasdiusadsahdisahdasihdsoahdo <br> adfsfdsdssdfsdfsassafafafafa</h5>
         </div>
       </div>
  			</div>

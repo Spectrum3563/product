@@ -15,6 +15,7 @@ require_once ('getProduct.php');
 		<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/responsive.css">
+		
 	</head>
 	<body>
 		<div id="wallpaper">
@@ -96,7 +97,7 @@ require_once ('getProduct.php');
 										<li><a href="#">Sản phẩm khác</a></li>
 									</ul>
 								</li>
-								<li ><a href="inputProduct.html">Thêm sản phẩm</a></li>
+								<li ><a href="adminInput.php">Admin</a></li>
 
 								<li><a href="#">Tin tức</a></li>
 								<li><a href="#">Tuyển dụng</a></li>
@@ -246,12 +247,13 @@ foreach ($proList as  $product) {
 					<span class="price-old">'.$product['price'].'vnd</span>
 
 				</div>
-				<a href="#" class="view-more">Xem chi tiết</a>
+				
+				<button type"button" class="view-more btn btn-primary"  onclick=\'window.open("detailProduct.php?id='.$product['id'].'","_self")\'>Xem chi tiết</button>
+
 			</div>
 		</div>
 	</div>';
 }
-
 											 ?>
 
 
